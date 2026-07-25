@@ -13,7 +13,6 @@ describe('ErrorFault', () => {
 
   it('should not apply with rate 0 (never)', () => {
     // With rate 0, Math.random() (which is always >= 0) will never be < 0
-    const config = { type: 'error', statusCode: 500, rate: 0, endpoints: ['/api/test'], duration: 20000 };
     // Test the shouldInjectError method directly
     expect(fault.shouldInjectError(0)).toBe(false);
   });
